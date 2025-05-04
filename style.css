@@ -1,0 +1,164 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding-top: 25%;
+    font-family: 'Inter', sans-serif;
+    background-color: #eff6ff;
+    color: #1e3a8a;
+  }
+  
+  profile-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  profile-card {
+    background: #fff;
+    max-width: 420px;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+  
+  .welcome-msg {
+text-align: center;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #25276a;
+    margin-bottom: 1rem;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .user-avatar {
+    width: 64px;
+    height: 64px;
+    background: #dbeafe;
+    border-radius: 50%;
+    padding: 0.5rem;
+  }
+  
+  .user-name {
+    font-size: 1.2rem;
+    color: #fb8c00;
+    font-weight: bold;
+  }
+  
+  .profile-illustration {
+    width: 100%;
+    max-width: 260px;
+    margin: 1rem auto;
+    display: block;
+  }
+  
+  .progress-box {
+    margin-top: 1rem;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+  
+  .progress-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e3a8a;
+  }
+  
+  .progress-items {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .progress-item {
+    text-align: center;
+  }
+  
+  .progress-item img {
+    background-color: #ffedd5;
+    border-radius: 50%;
+    padding: 0.5rem;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .progress-item p {
+    font-size: 0.9rem;
+    color: #4b5563;
+  }
+  
+  .progress-item strong {
+    font-size: 1rem;
+    color: #000;
+  }
+  
+  .settings-box {
+    margin-top: 1.5rem;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+  }
+  
+  .setting {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .setting:last-child {
+    border-bottom: none;
+  }
+  
+  .setting img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .setting span {
+    font-size: 0.95rem;
+    color: #1f2937;
+  }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .profile-card {
+      padding: 2rem;
+    }
+  
+    .welcome-msg {
+      font-size: 2rem;
+    }
+  }
+
+  .footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    padding: 16px;
+    margin: 40px auto 0;
+    width: 100%;
+    max-width: 340px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+  }

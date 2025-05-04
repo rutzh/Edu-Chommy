@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <title>Quiz Thing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      padding-top: 25%;
+      font-family: sans-serif;
+      background: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .section-header h2 {
+      font-size: 24px;
+      color: #111827;
+    }
+
+    .all-quizzes {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .one-quiz {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      background-color: #ffffff;
+    }
+
+    .quiz-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .quiz-info img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .quiz-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quiz-text .title {
+      font-weight: 600;
+      font-size: 14px;
+      color: #1f2937;
+      text-transform: capitalize;
+    }
+
+    .quiz-text .count {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .quiz-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .progress-box {
+      background-color: #dcfce7;
+      color: #15803d;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .start-btn {
+      padding: 5px 10px;
+      font-size: 12px;
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .one-quiz {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .quiz-right {
+        align-self: flex-end;
+      }
+    }
+
+    .quiz-card {
+      width: 100%;
+      max-width: 340px;
+      background-color: #fff;
+      padding-top: 30px;
+      padding-left: 27%;
+      position: relative;
+    }
+
+    .top-section {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .icon-circle {
+      width: 44px;
+      height: 44px;
+      background-color: #f3e8ff;
+      border-radius: 999px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .icon-circle img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .info-text {
+      flex-grow: 1;
+    }
+
+    .info-text h3 {
+      font-size: 14px;
+      font-weight: bold;
+      color: #1f2937;
+      margin-bottom: 4px;
+    }
+
+    .info-text p {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 6px;
+    }
+
+    .progress-fill {
+      width: 40%;
+      height: 100%;
+      background-color: #9333ea;
+      border-radius: 999px;
+    }
+
+    .progress-label {
+      font-size: 11px;
+      text-align: right;
+      color: #3f66b3;
+    }
+
+    @media (max-width: 400px) {
+      .quiz-card {
+        padding: 14px;
+      }
+
+      .top-section {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .progress-label {
+        text-align: left;
+      }
+
+      .motivation {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .motivation img {
+        width: 40px;
+        height: auto;
+      }
+
+      .you-ve-got-this-each {
+        margin: 0;
+        font-size: 16px;
+      }
+    }
+
+    .footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      padding: 16px;
+      margin: 40px auto 0;
+      width: 100%;
+      max-width: 340px;
+      border-radius: 12px 12px 0 0;
+      box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <div class="main-holder">
+    <div class="section-header">
+      <h2>Badge Progress Tracker</h2>
+    </div>
+
+    <div class="all-quizzes">
+
+      <div class="one-quiz" id="financial-literacy-quiz">
+        <div class="quiz-info">
+          <img src="img/frame-4.svg" alt="identity" />
+          <div class="quiz-text">
+            <span class="title">financial-literacy</span>
+            <span class="count">10 questions</span>
+          </div>
+        </div>
+        <div class="quiz-right">
+          <div class="progress-box">9/10</div>
+          <a href="finacial.quiz.html">    <button class="start-btn">Start</button></a>
+        </div>
+      </div>
+
+      <div class="one-quiz">
+        <div class="quiz-info">
+          <img src="img/frame-5.svg" alt="community" />
+          <div class="quiz-text">
+            <span class="title">Career Exploration</span>
+            <span class="count">8 questions</span>
+          </div>
+        </div>
+        <div class="quiz-right">
+          <div class="progress-box">4/8</div>
+        </div>
+      </div>
+
+      <div class="one-quiz">
+        <div class="quiz-info">
+          <img src="img/frame-6.svg" alt="career" />
+          <div class="quiz-text">
+            <span class="title">Substance Abuse</span>
+            <span class="count">12 questions</span>
+          </div>
+        </div>
+        <div class="quiz-right">
+          <button class="start-btn">Start</button>
+        </div>
+      </div>
+
+      <div class="one-quiz">
+        <div class="quiz-info">
+          <img src="img/frame-7.svg" alt="money" />
+          <div class="quiz-text">
+            <span class="title">Self-Identity</span>
+            <span class="count">7 questions</span>
+          </div>
+        </div>
+        <div class="quiz-right">
+          <button class="start-btn">Start</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="motivation">
+      <img src="images/quizimage.png" alt="quizzes" />
+      <p class="you-ve-got-this-each">You've got this! Each question is a step forward.</p>
+    </div>
+
+    <div class="quiz-card">
+      <div class="top-section">
+        <div class="icon-circle">
+          <i class="material-icons">emoji_events</i>
+        </div>
+        <div class="info-text">
+          <h3>Quiz Champion</h3>
+          <p>Complete all quizzes to earn this badge</p>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+      <div class="progress-label">2/5 completed</div>
+    </div>
+
+  
+
+  <footer class="footer">
+    <p>Made with 💚 by Edu-Chommy Team</p>
+  </footer>
+  </div>
+  <script src="navBar.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const quizId = params.get("quiz");
+      if (quizId) {
+        const quizElement = document.getElementById(quizId);
+        if (quizElement) {
+          quizElement.scrollIntoView({ behavior: "smooth", block: "center" });
+          quizElement.style.boxShadow = "0 0 20px #9333ea";
+          quizElement.style.transition = "box-shadow 0.5s ease";
+
+          setTimeout(() => {
+            quizElement.style.boxShadow = "none";
+          }, 3000);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+
