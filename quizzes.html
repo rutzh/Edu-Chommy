@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <title>Quiz Thing</title>
   <style>
     * {
@@ -13,7 +14,6 @@
     }
 
     body {
-      padding-top: 25%;
       font-family: sans-serif;
       background: #f9fafb;
       display: flex;
@@ -22,6 +22,7 @@
       min-height: 100vh;
     }
 
+  
     .section-header {
       text-align: center;
       margin-bottom: 25px;
@@ -69,7 +70,6 @@
       font-weight: 600;
       font-size: 14px;
       color: #1f2937;
-      text-transform: capitalize;
     }
 
     .quiz-text .count {
@@ -107,19 +107,24 @@
         align-items: flex-start;
         gap: 10px;
       }
-
+    }
       .quiz-right {
         align-self: flex-end;
       }
-    }
+
 
     .quiz-card {
       width: 100%;
       max-width: 340px;
       background-color: #fff;
+     /* border-radius: 10px;*/
+      
+      
+      /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);*/
       padding-top: 30px;
       padding-left: 27%;
       position: relative;
+      
     }
 
     .top-section {
@@ -170,7 +175,7 @@
     }
 
     .progress-fill {
-      width: 40%;
+      width: 40%; /* 2 out of 5 completed */
       height: 100%;
       background-color: #9333ea;
       border-radius: 999px;
@@ -179,7 +184,7 @@
     .progress-label {
       font-size: 11px;
       text-align: right;
-      color: #3f66b3;
+      color: #6b7280;
     }
 
     @media (max-width: 400px) {
@@ -195,41 +200,29 @@
       .progress-label {
         text-align: left;
       }
-
+    
       .motivation {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
+  display: flex;
+  align-items: center;
+  gap: 10px; /* spacing between image and text */
+}
 
-      .motivation img {
-        width: 40px;
-        height: auto;
-      }
+.motivation img {
+  width: 40px;   /* adjust as needed */
+  height: auto;
+}
 
-      .you-ve-got-this-each {
-        margin: 0;
-        font-size: 16px;
-      }
-    }
+.you-ve-got-this-each {
+  margin: 0; /* remove default paragraph margin if needed */
+  font-size: 16px;
+}
 
-    .footer {
-      background-color: #ffffff;
-      border-top: 1px solid #e5e7eb;
-      text-align: center;
-      font-size: 14px;
-      color: #6b7280;
-      padding: 16px;
-      margin: 40px auto 0;
-      width: 100%;
-      max-width: 340px;
-      border-radius: 12px 12px 0 0;
-      box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.05);
+
     }
   </style>
 </head>
 <body>
-  <div id="navbar"></div>
+
   <div class="main-holder">
     <div class="section-header">
       <h2>Badge Progress Tracker</h2>
@@ -237,25 +230,24 @@
 
     <div class="all-quizzes">
 
-      <div class="one-quiz" id="financial-literacy-quiz">
+      <div class="one-quiz">
         <div class="quiz-info">
-          <img src="img/frame-4.svg" alt="identity" />
+          <img src="img/frame-4.svg" alt="identity">
           <div class="quiz-text">
-            <span class="title">financial-literacy</span>
+            <span class="title">finacial Literacy</span>
             <span class="count">10 questions</span>
           </div>
         </div>
         <div class="quiz-right">
           <div class="progress-box">9/10</div>
-          <a href="finacial.quiz.html">    <button class="start-btn">Start</button></a>
         </div>
       </div>
 
       <div class="one-quiz">
         <div class="quiz-info">
-          <img src="img/frame-5.svg" alt="community" />
+          <img src="img/frame-5.svg" alt="community">
           <div class="quiz-text">
-            <span class="title">Career Exploration</span>
+            <span class="title">career exploration</span>
             <span class="count">8 questions</span>
           </div>
         </div>
@@ -266,9 +258,9 @@
 
       <div class="one-quiz">
         <div class="quiz-info">
-          <img src="img/frame-6.svg" alt="career" />
+          <img src="img/frame-6.svg" alt="career">
           <div class="quiz-text">
-            <span class="title">Substance Abuse</span>
+            <span class="title">substance abuse</span>
             <span class="count">12 questions</span>
           </div>
         </div>
@@ -279,9 +271,9 @@
 
       <div class="one-quiz">
         <div class="quiz-info">
-          <img src="img/frame-7.svg" alt="money" />
+          <img src="img/frame-7.svg" alt="money">
           <div class="quiz-text">
-            <span class="title">Self-Identity</span>
+            <span class="title">self-identity</span>
             <span class="count">7 questions</span>
           </div>
         </div>
@@ -291,53 +283,28 @@
       </div>
 
     </div>
-
-    <div class="motivation">
-      <img src="images/quizimage.png" alt="quizzes" />
-      <p class="you-ve-got-this-each">You've got this! Each question is a step forward.</p>
-    </div>
-
-    <div class="quiz-card">
-      <div class="top-section">
-        <div class="icon-circle">
-          <i class="material-icons">emoji_events</i>
-        </div>
-        <div class="info-text">
-          <h3>Quiz Champion</h3>
-          <p>Complete all quizzes to earn this badge</p>
-        </div>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
-      </div>
-      <div class="progress-label">2/5 completed</div>
-    </div>
-
   
+    <div class="motivation">
+        <img src="images/quizimage.png" alt="quizzes">
+        <p class="you-ve-got-this-each">You've got this! Each question is a step forward.</p>
+      </div>
+      
 
-  <footer class="footer">
-    <p>Made with 💚 by Edu-Chommy Team</p>
-  </footer>
+  <div class="quiz-card">
+    <div class="top-section">
+      <div class="icon-circle">
+        <i class="material-icons">emoji_events</i>
+      </div>
+      <div class="info-text">
+        <h3>Quiz Champion</h3>
+        <p>Complete all quizzes to earn this badge</p>
+      </div>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill"></div>
+    </div>
+    <div class="progress-label">2/5 completed</div>
   </div>
-  <script src="navBar.js"></script>
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const quizId = params.get("quiz");
-      if (quizId) {
-        const quizElement = document.getElementById(quizId);
-        if (quizElement) {
-          quizElement.scrollIntoView({ behavior: "smooth", block: "center" });
-          quizElement.style.boxShadow = "0 0 20px #9333ea";
-          quizElement.style.transition = "box-shadow 0.5s ease";
-
-          setTimeout(() => {
-            quizElement.style.boxShadow = "none";
-          }, 3000);
-        }
-      }
-    });
-  </script>
+  </div>
 </body>
 </html>
-
