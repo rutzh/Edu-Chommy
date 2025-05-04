@@ -1,0 +1,92 @@
+<nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">Edu-Chommy</div>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="lessons.html">lesson</a></li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href=".html">Journal</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <style>
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  padding: 15px 20px;
+  z-index: 1000;
+}
+    .navbar {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #2563eb;
+    width: 100%;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 10px 20px;
+    border-top: 1px solid #1e40af;
+  }
+}
+
+  </style>
